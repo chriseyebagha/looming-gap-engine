@@ -151,7 +151,12 @@ function extractSkills(text) {
     // 4. Final Filtering & Context Check
     const cleaned = Array.from(foundSkills)
         .map(s => s.trim())
-        .filter(s => s.length > 2)
+        .filter(s => {
+            // Allow short skills if they are in our dictionary (e.g. S3, Go, R, C#)
+            // Case-insensitive check against dictionary
+            if (SKILL_DICTIONARY.some(d => d.toLowerCase() === s.toLowerCase())) return true;
+            return s.length > 2;
+        })
         .filter(s => {
             // Blocklist Check
             if (BLOCKLIST.some(block => s.toLowerCase().includes(block.toLowerCase()))) return false;
