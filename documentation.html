@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looming Gap Engine | System Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #0d9488;
+            /* Calm Teal */
+            --primary-soft: #f0fdfa;
+            --accent: #0f766e;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 60px auto;
+            background: var(--surface);
+            padding: 48px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 64px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 32px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary-soft);
+            border: 1px solid #ccfbf1;
+            border-radius: 4px;
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 16px;
+        }
+
+        section {
+            margin-bottom: 56px;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            margin-bottom: 16px;
+            padding-left: 28px;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        code {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            border: 1px solid #e2e8f0;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 48px 0;
+        }
+
+        footer {
+            text-align: left;
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 32px 24px;
+                margin: 20px auto;
+                border-radius: 8px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Looming Gap Engine</h1>
+            <p class="subtitle">System intelligence & product overview</p>
+            <span class="badge">Documentation v1.1</span>
+        </header>
+
+        <section id="user-perspective">
+            <h2>User Perspective</h2>
+            <p>The Looming Gap Engine is a personalized up-skilling co-pilot designed to automate the trajectory of your
+                professional growth by identifying skill gaps directly from the market.</p>
+
+            <h3>Concept</h3>
+            <p>Instead of guessing what technologies to master, the engine uses real-world job data to quantify demand.
+                It's a bridge between the jobs you want and the skills you need.</p>
+
+            <h3>Core Workflow</h3>
+            <ul>
+                <li><strong>Mobile Capture:</strong> Share job links directly into your <strong>Notion Mobile
+                        Inbox</strong>. The system handles the rest.</li>
+                <li><strong>Intelligence Engine:</strong> Periodically analyzes JDs, extracts technical requirements,
+                    and cross-references your current profile.</li>
+                <li><strong>Dynamic Prioritization:</strong> Automatically updates your <strong>Master Skill
+                        Tracker</strong>, surfacing high-frequency gaps as learning priorities.</li>
+                <li><strong>Daily Delivery:</strong> Every morning at 08:00, a curated brief arrives in <strong>Apple
+                        Notes</strong> with targeted learning resources.</li>
+            </ul>
+
+            <h3>Strategic Value</h3>
+            <ul>
+                <li><strong>Precision Learning:</strong> Focus only on what the market is actively asking for.</li>
+                <li><strong>Mobile Integrated:</strong> Capture high-value signals instantly from your phone while
+                    browsing.</li>
+                <li><strong>Automated Research:</strong> High-signal resources are discovered and delivered daily.</li>
+            </ul>
+        </section>
+
+        <section id="engineer-perspective">
+            <h2>Engineer Perspective</h2>
+
+            <h3>Stack & Integration</h3>
+            <p>A headless automation suite built on <strong>Node.js</strong> with deep system hooks:</p>
+            <ul>
+                <li><strong>Notion API:</strong> Primary data lake for job pipelines and skill metrics.</li>
+                <li><strong>Puppeteer:</strong> Programmatic browser automation for scraping dynamic JDs.</li>
+                <li><strong>Dev.to API:</strong> Source for community-vetted, high-signal technical content.</li>
+                <li><strong>AppleScript:</strong> Native execution bridge for macOS app interaction.</li>
+                <li><strong>launchd:</strong> System-level lifecycle management and persistent orchestration.</li>
+            </ul>
+
+            <h3>System Architecture</h3>
+            <ul>
+                <li><code>upskill.js</code>: The primary ingestion engine. Handles scraping and regex-based skill
+                    extraction.</li>
+                <li><code>morning_brief.js</code>: The aggregation layer. Compiles intelligence and triggers delivery.
+                </li>
+                <li><code>skill_scheduler.js</code>: State management for the learning queue.</li>
+            </ul>
+
+            <h3>Automation Lifecycle</h3>
+            <p>Scheduled via macOS Launch Agents (<code>~/Library/LaunchAgents/</code>):</p>
+            <ul>
+                <li><strong>Watcher:</strong> Persistent polling (every 6h + 18:00 daily).</li>
+                <li><strong>Brief:</strong> Scheduled execution (daily at 08:00).</li>
+            </ul>
+
+            <h3>Resolution Path</h3>
+            <p><code>/Users/chriseyebagha/Documents/Projects/looming-gap-engine/</code></p>
+        </section>
+
+        <footer>
+            <p>Constructed by Looming Gap Engine &bullet; Last updated Jan 5, 2026</p>
+        </footer>
+    </div>
+</body>
+
+</html>

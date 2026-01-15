@@ -1,0 +1,39 @@
+name: Looming Gap Engine Cloud
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Every 30 minutes
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Puppeteer Dependencies
+        run: npx puppeteer browsers install chrome
+
+      - name: Run Engine Operations
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          MASTER_DB_ID: ${{ secrets.MASTER_DB_ID }}
+          INBOX_DB_ID: ${{ secrets.INBOX_DB_ID }}
+
+          LIVE_BRIEF_PAGE_ID: ${{ secrets.LIVE_BRIEF_PAGE_ID }}
+          CURL_PATH: 'curl'
+        run: |
+          echo ">>> Running Job Watcher (upskill.js)..."
+          node upskill.js --watch
+          echo ">>> Running Morning Brief Generator (morning_brief.js)..."
+          node morning_brief.js
